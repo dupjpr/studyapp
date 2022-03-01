@@ -1,9 +1,9 @@
 import avatar1 from "./img/Artboards_Diversity_Avatars_by_Netguru-01.png";
 import avatar2 from "./img/Artboards_Diversity_Avatars_by_Netguru-02.png";
 import avatar3 from "./img/Artboards_Diversity_Avatars_by_Netguru-03.png";
-import { userTypes } from "./types";
+// import { userTypes } from "./types";
 
-const userData: userTypes = [
+const userData = [
   { name: "Juan", age: 23, img: { avatar1 }, company: "Autodesk", id: 726781 },
   {
     name: "Liliana",
