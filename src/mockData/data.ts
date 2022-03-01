@@ -1,21 +1,24 @@
-import avatar1 from "./img/Artboards_Diversity_Avatars_by_Netguru-01.png";
-import avatar2 from "./img/Artboards_Diversity_Avatars_by_Netguru-02.png";
-import avatar3 from "./img/Artboards_Diversity_Avatars_by_Netguru-03.png";
-// import { userTypes } from "./types";
+import { userTypes } from "./types";
 
-const userData = [
-  { name: "Juan", age: 23, img: { avatar1 }, company: "Autodesk", id: 726781 },
+const userData: userTypes = [
   {
-    name: "Liliana",
+    name: "Juan",
+    age: 23,
+    img: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+    company: "Autodesk",
+    id: 726781,
+  },
+  {
+    name: "Mike",
     age: 30,
-    img: { avatar2 },
+    img: "https://rickandmortyapi.com/api/character/avatar/47.jpeg",
     company: "Autodesk",
     id: 536291,
   },
   {
-    name: "Camila",
+    name: "Nelson",
     age: 35,
-    img: { avatar3 },
+    img: "https://rickandmortyapi.com/api/character/avatar/58.jpeg",
     company: "Autodesk",
     id: 637829,
   },
