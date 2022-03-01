@@ -1,4 +1,4 @@
-import { store } from "./redux/store";
+import store from "./redux/store";
 import { Provider } from "react-redux";
 import Input from "./components/Input/Input";
 import View from "./components/View/View";
