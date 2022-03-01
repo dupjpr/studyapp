@@ -13,7 +13,7 @@ const View: React.FC = () => {
             <strong>Age:</strong> {item.age}
           </div>
           <div>
-            <strong>Company: {item.company}</strong>
+            <strong>Company:</strong> {item.company}
           </div>
         </div>
       ))}
