@@ -26,6 +26,7 @@ const Input: React.FC = () => {
         Photo URL:
         <input type="text" value={img} />
       </label>
+      <input type="submit" value="add" />
     </form>
   );
 };
