@@ -2,6 +2,9 @@ import { useAppSelector } from "../../redux/hooks";
 
 const View: React.FC = () => {
   const data = useAppSelector((state) => state.users.list);
+  // const dataCompli = useAppSelector((state) => state);
+
+  console.log(data);
 
   return (
     <div>

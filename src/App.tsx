@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
-        <h1>hello world </h1>
+        <h1>Study App</h1>
         <Input />
         <View />
       </Provider>
