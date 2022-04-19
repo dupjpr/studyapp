@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { addInfo } from "../../redux/slices/inputSlice";
 import { addUser } from "../../redux/slices/viewSlice";
@@ -29,7 +30,16 @@ const Input: React.FC = () => {
         age: age,
         img: img,
         company: company,
-        id: 674747,
+        id: uuidv4(),
+      })
+    );
+    dispatch(
+      addInfo({
+        name: "",
+        age: 0,
+        img: "",
+        company: "",
+        id: "",
       })
     );
   };
