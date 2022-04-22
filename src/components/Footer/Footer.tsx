@@ -1,5 +1,6 @@
+import "./footer.style.scss";
 const Footer = () => {
-  return <footer>Code by Dup-K</footer>;
+  return <footer className="footerContainer">Code by Dup-K</footer>;
 };
 
 export default Footer;

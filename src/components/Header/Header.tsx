@@ -1,6 +1,8 @@
+import "./header.style.scss";
+
 const Header: React.FC = () => {
   return (
-    <header>
+    <header className="headerContainer">
       <h1>Study App</h1>
     </header>
   );

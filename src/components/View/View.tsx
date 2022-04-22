@@ -1,8 +1,16 @@
-import { useAppSelector } from "../../redux/hooks";
+import { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import Tabs from "../Tabs/Tabs";
+import getInformation from "../../redux/slices/viewSlice";
 
 const View: React.FC = () => {
   const data = useAppSelector((state) => state.users.list);
+  const dispatch = useAppDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getInformation);
+  // });
+
   // const dataCompli = useAppSelector((state) => state);
 
   // const defaultImageUrl =
@@ -11,20 +19,8 @@ const View: React.FC = () => {
   console.log(data);
 
   return (
-    <section>
+    <section className="viewSectionContainer">
       <Tabs />
-      {/* {data.map((item) => (
-        <div key={item.id}>
-          <h3>{item.name}</h3>
-          <img src={item.img ? item.img : defaultImageUrl} alt="avatar" />
-          <div>
-            <strong>Age:</strong> {item.age}
-          </div>
-          <div>
-            <strong>Company:</strong> {item.company}
-          </div>
-        </div>
-      ))} */}
     </section>
   );
 };
