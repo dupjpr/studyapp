@@ -1,4 +1,21 @@
+@use "../../style//palette.scss";
+@use "../../style/base.scss";
+
 .tabsContainer {
-  width: 100%;
-  height: 80vh;
+  @include base.containerSize($height: 80vh);
+
+  .tabsButtonsContainer {
+    background-color: palette.$autodeskTurquoise300;
+    .tabsButtonUsers,
+    .tabsButtonNewUsers {
+      background-color: palette.$autodeskTurquoise100;
+      border: none;
+    }
+  }
+
+  .tabsinformationContainer {
+    @include base.containerSize($height: 80vh);
+    background-color: palette.$autodeskTurquoise100;
+    padding: 1%;
+  }
 }

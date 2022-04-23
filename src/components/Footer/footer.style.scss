@@ -1,4 +1,8 @@
+@use "../../style/palette.scss";
+@use "../../style//base.scss";
+
 .footerContainer {
-  width: 100%;
-  height: 10vh;
+  @include base.containerSize($height: 5vh);
+
+  background-color: palette.$autodeskTurquoise300;
 }

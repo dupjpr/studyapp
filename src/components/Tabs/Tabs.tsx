@@ -14,11 +14,17 @@ const Tabs = () => {
 
   return (
     <div className="tabsContainer">
-      <div>
-        <button onClick={(e) => handleClick(e)}>Users</button>
-        <button onClick={(e) => handleClick(e)}>New User</button>
+      <div className="tabsButtonsContainer">
+        <button onClick={(e) => handleClick(e)} className="tabsButtonUsers">
+          Users
+        </button>
+        <button onClick={(e) => handleClick(e)} className="tabsButtonNewUsers">
+          New User
+        </button>
       </div>
-      {constrolTabs ? <Users /> : <Input />}
+      <div className="tabsinformationContainer">
+        {constrolTabs ? <Users /> : <Input />}
+      </div>
     </div>
   );
 };
