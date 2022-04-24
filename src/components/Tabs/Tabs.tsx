@@ -15,10 +15,20 @@ const Tabs = () => {
   return (
     <div className="tabsContainer">
       <div className="tabsButtonsContainer">
-        <button onClick={(e) => handleClick(e)} className="tabsButtonUsers">
+        <button
+          onClick={(e) => handleClick(e)}
+          className={`tabsButtonUsers ${
+            constrolTabs ? "tabsButtonActive" : ""
+          }`}
+        >
           Users
         </button>
-        <button onClick={(e) => handleClick(e)} className="tabsButtonNewUsers">
+        <button
+          onClick={(e) => handleClick(e)}
+          className={`tabsButtonNewUsers ${
+            constrolTabs ? "" : "tabsButtonActive"
+          }`}
+        >
           New User
         </button>
       </div>

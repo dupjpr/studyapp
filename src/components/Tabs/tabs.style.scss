@@ -5,16 +5,27 @@
   @include base.containerSize($height: 80vh);
 
   .tabsButtonsContainer {
+    @include base.containerSize($height: 5%);
+    @include base.containerDisplay($align: flex-end, $justify: flex-start);
     background-color: palette.$autodeskTurquoise300;
+    padding-left: 2%;
     .tabsButtonUsers,
     .tabsButtonNewUsers {
-      background-color: palette.$autodeskTurquoise100;
+      @include base.containerSize($width: auto, $height: auto);
+      background-color: palette.$autodeskTurquoise300;
       border: none;
+      padding: 0.2% 1.5%;
+    }
+
+    .tabsButtonActive {
+      background-color: palette.$autodeskTurquoise100;
+      border-top: 2px solid palette.$autodeskTurquoise600;
+      font-weight: bold;
     }
   }
 
   .tabsinformationContainer {
-    @include base.containerSize($height: 80vh);
+    @include base.containerSize($height: 95%);
     background-color: palette.$autodeskTurquoise100;
     padding: 1%;
   }
