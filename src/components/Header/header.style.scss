@@ -1,0 +1,17 @@
+@use "../../style//palette.scss";
+@use "../../style//base.scss";
+
+.headerContainer {
+  @include base.containerSize($height: 15vh);
+  @include base.containerDisplay($justify: space-around);
+  background-color: palette.$autodeskTurquoise800;
+
+  .headerImageContainer {
+    @include base.containerDisplay();
+    @include base.containerSize($width: 50%, $height: 100%);
+    img {
+      @include base.containerSize($width: 100%, $height: 80%);
+      object-fit: contain;
+    }
+  }
+}

@@ -4,6 +4,8 @@ import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { addInfo } from "../../redux/slices/inputSlice";
 import { addUser } from "../../redux/slices/viewSlice";
 
+import "./input.style.scss";
+
 const Input: React.FC = () => {
   const data = useAppSelector((state) => state.userInput.formInput);
   const dispatch = useAppDispatch();
@@ -45,7 +47,7 @@ const Input: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formContainer">
       New User
       <label>
         Name:

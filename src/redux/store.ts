@@ -1,9 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, MiddlewareArray } from "@reduxjs/toolkit";
 import userInputData from "./slices/inputSlice";
 import userList from "./slices/viewSlice";
 
 const store = configureStore({
   reducer: { users: userList, userInput: userInputData },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
