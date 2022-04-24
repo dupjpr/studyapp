@@ -1,4 +1,5 @@
 import store from "../../store";
+import { inputUserTypes } from "../inputSlice";
 import { addUser } from "../viewSlice";
 
 test("there is a user call Mike with id: 536291", () => {

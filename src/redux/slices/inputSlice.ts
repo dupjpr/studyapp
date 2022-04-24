@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import type { RootState } from "../store";
-interface inputUserTypes {
+export interface inputUserTypes {
   formInput: {
     name: string;
     age: number;

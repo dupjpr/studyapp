@@ -8,14 +8,15 @@ const Tabs = () => {
   const [constrolTabs, setControlTabs] = useState(true);
 
   const handleClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement;
-    target.innerText === "Users" ? setControlTabs(true) : setControlTabs(false);
+    const target = e.target as HTMLInputElement;
+    target.name === "users" ? setControlTabs(true) : setControlTabs(false);
   };
 
   return (
     <div className="tabsContainer">
       <div className="tabsButtonsContainer">
         <button
+          name="users"
           onClick={(e) => handleClick(e)}
           className={`tabsButtonUsers ${
             constrolTabs ? "tabsButtonActive" : ""
@@ -24,6 +25,7 @@ const Tabs = () => {
           Users
         </button>
         <button
+          name="newUsers"
           onClick={(e) => handleClick(e)}
           className={`tabsButtonNewUsers ${
             constrolTabs ? "" : "tabsButtonActive"
