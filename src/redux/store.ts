@@ -1,13 +1,16 @@
-import { configureStore, MiddlewareArray } from "@reduxjs/toolkit";
-import userInputData from "./slices/inputSlice";
-import userList from "./slices/viewSlice";
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import rootReducer from "./rootReducer";
 
 const store = configureStore({
-  reducer: { users: userList, userInput: userInputData },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  reducer: { rootReducer },
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export type AppThunk<ReturnType = any> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
 export default store;
