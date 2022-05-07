@@ -1,18 +1,17 @@
 import { useAppSelector } from "../../redux/hooks";
+import Loading from "../uiLibrary/Loading/Loading";
+import UserList from "./UserList/UserList";
 
 import "./users.style.scss";
 
 const Users = () => {
-  // const data = useAppSelector((state) => state.users.list);
+  const data = useAppSelector((state) => state.rootReducer.users);
 
-  // const defaultImageUrl =
-  //   "https://rickandmortyapi.com/api/character/avatar/249.jpeg";
-
-  // console.log("--->", data);
+  const { loading } = data;
 
   return (
     <div className="usersContainer">
-      hello landing
+      {loading ? <Loading /> : <UserList />}
       {/* {data.map((item) => (
         <div key={item.id}>
           <h3>{item.name}</h3>
