@@ -1,4 +1,5 @@
 import store from "./redux/store";
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -9,11 +10,13 @@ import "./app.style.scss";
 function App() {
   return (
     <div className="App">
-      <Provider store={store}>
-        <Header />
-        <View />
-        <Footer />
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <Header />
+          <View />
+          <Footer />
+        </Provider>
+      </BrowserRouter>
     </div>
   );
 }
