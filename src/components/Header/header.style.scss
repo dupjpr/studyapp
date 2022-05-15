@@ -2,10 +2,9 @@
 @use "../../style//base.scss";
 
 .headerContainer {
-  @include base.containerSize($height: 15vh);
+  @include base.containerSize($height: 10vh);
   @include base.containerDisplay($justify: space-around);
-  background-color: palette.$autodeskTurquoise800;
-
+  // background-color: palette.$autodeskTurquoise800;
   .headerImageContainer {
     @include base.containerDisplay();
     @include base.containerSize($width: 50%, $height: 100%);

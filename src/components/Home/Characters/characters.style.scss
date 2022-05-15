@@ -1,0 +1,44 @@
+@use "../../../style/base.scss";
+
+.characters-container {
+  @include base.containerSize($width: 100%, $height: 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  .grid-item {
+    @include base.containerDisplay();
+    .character-card {
+      @include base.containerDisplay($justify: space-around);
+      @include base.containerSize($width: 80%, $height: 80%);
+      border-radius: 16px;
+      /* From https://css.glass */
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      .character-card-img {
+        @include base.containerDisplay();
+        @include base.containerSize($width: 40%, $height: 100%);
+        img {
+          @include base.containerSize($width: 95%, $height: 95%);
+          object-fit: cover;
+          border-radius: 16px;
+        }
+      }
+      .character-card-info {
+        @include base.containerDisplay(
+          $align: start,
+          $direction: column,
+          $justify: space-around
+        );
+        @include base.containerSize($width: 60%, $height: 100%);
+        h2 {
+          @include base.containerSize($height: auto);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
