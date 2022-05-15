@@ -3,7 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../redux/hooks";
 import { fetchPosts } from "../../redux/slices/usersListSlice";
 import Input from "../Input/Input";
-import Users from "../Users/Users";
+import Home from "../Home/Home";
+
+import "./view.style.scss";
 
 const View: React.FC = () => {
   const data = useAppSelector((state) => state);
@@ -19,7 +21,7 @@ const View: React.FC = () => {
   return (
     <section className="viewSectionContainer">
       <Routes>
-        <Route path="/" element={<Users />} />
+        <Route path="/" element={<Home />} />
         <Route path="/form" element={<Input />} />
       </Routes>
     </section>
