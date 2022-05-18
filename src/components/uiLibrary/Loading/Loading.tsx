@@ -1,5 +1,11 @@
+import "./loading.style.scss";
+
 const Loading = () => {
-  return <div>loading....</div>;
+  return (
+    <div className="loading-container">
+      <span className="loader"></span>
+    </div>
+  );
 };
 
 export default Loading;
