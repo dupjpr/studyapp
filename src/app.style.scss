@@ -3,22 +3,61 @@
   margin: 0;
   font-size: 16px;
   box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }
 
 .App {
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   #3c3c3c,
+  //   #474356,
+  //   #52496f,
+  //   #5f4f89,
+  //   #6e54a3,
+  //   #6468bf,
+  //   #4c7cda,
+  //   #0091f2,
+  //   #00b2f7,
+  //   #00cde7,
+  //   #44e3d0,
+  //   #a2f5be
+  // );
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   #3c3c3c,
+  //   #474356,
+  //   #52496f,
+  //   #5f4f89,
+  //   #6e54a3
+  // );
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   #3c3c3c,
+  //   #4c4e5c,
+  //   #57617e,
+  //   #5977a2,
+  //   #508fc7,
+  //   #508fc7,
+  //   #508fc7,
+  //   #508fc7,
+  //   #5977a2,
+  //   #57617e,
+  //   #4c4e5c,
+  //   #3c3c3c
+  // );
   background-image: linear-gradient(
     to right bottom,
     #3c3c3c,
-    #474356,
-    #52496f,
-    #5f4f89,
-    #6e54a3,
-    #6468bf,
-    #4c7cda,
-    #0091f2,
-    #00b2f7,
-    #00cde7,
-    #44e3d0,
-    #a2f5be
+    #49495a,
+    #51577a,
+    #53679c,
+    #4a78c0,
+    #4a78c0,
+    #4a78c0,
+    #4a78c0,
+    #53679c,
+    #51577a,
+    #49495a,
+    #3c3c3c
   );
 }

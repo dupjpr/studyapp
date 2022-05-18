@@ -3,14 +3,12 @@
 
 .headerContainer {
   @include base.containerSize($height: 10vh);
-  @include base.containerDisplay($justify: space-around);
-  // background-color: palette.$autodeskTurquoise800;
-  .headerImageContainer {
-    @include base.containerDisplay();
-    @include base.containerSize($width: 50%, $height: 100%);
-    img {
-      @include base.containerSize($width: 100%, $height: 80%);
-      object-fit: contain;
-    }
+  @include base.containerDisplay($justify: space-between);
+  color: palette.$autodeskwhite;
+  box-sizing: border-box;
+  padding: 0 3.8% 0;
+  .headerLogo {
+    font-weight: bold;
+    font-size: 2.7rem;
   }
 }

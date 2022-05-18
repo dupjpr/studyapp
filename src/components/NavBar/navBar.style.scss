@@ -1,0 +1,33 @@
+@use "../../style/palette.scss";
+@use "../../style/base.scss";
+
+.navBar-container {
+  @include base.containerSize($width: 20%, $height: 30%);
+  @include base.containerDisplay($justify: space-around);
+  color: palette.$autodeskwhite;
+  a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 2px;
+  }
+  a:nth-child(1) {
+    @include base.containerSize($width: 50%, $height: auto);
+    text-align: center;
+  }
+  a:nth-child(2) {
+    @include base.containerSize($width: 50%, $height: auto);
+    text-align: center;
+    border-left: 1px solid palette.$autodeskwhite;
+  }
+  a:hover {
+    color: palette.$autodeskdark;
+  }
+  .active {
+    font-weight: bold;
+  }
+  .active:hover {
+    font-weight: normal;
+    color: palette.$autodeskwhite;
+  }
+}

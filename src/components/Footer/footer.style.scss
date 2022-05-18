@@ -3,5 +3,7 @@
 
 .footerContainer {
   @include base.containerSize($height: 5vh);
-  // background-color: palette.$autodeskTurquoise300;
+  @include base.containerDisplay();
+  color: palette.$autodeskwhite;
+  font-size: 1.3rem;
 }

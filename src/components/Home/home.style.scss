@@ -1,5 +1,7 @@
-@use "../../style//base.scss";
+@use "../../style/base.scss";
+@use "../../style/palette.scss";
 
 .home-container {
   @include base.containerSize($height: 85vh);
+  color: palette.$autodeskwhite;
 }
