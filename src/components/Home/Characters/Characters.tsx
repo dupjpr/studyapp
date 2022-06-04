@@ -18,15 +18,18 @@ const CharactersList = () => {
             </div>
             <div className="character-card-info">
               <h2>{item.name}</h2>
-              <p>
-                <strong>Species:</strong> {item.species}
-              </p>
-              <p>
-                <strong>Gender:</strong> {item.gender}
-              </p>
-              <p>
-                <strong>Status:</strong> {item.status}
-              </p>
+              <div>
+                <p>Species:</p>
+                <p>{item.species}</p>
+              </div>
+              <div>
+                <p>Gender:</p>
+                <p>{item.gender}</p>
+              </div>
+              <div>
+                <p>Status:</p>
+                <p>{item.status}</p>
+              </div>
             </div>
           </div>
         </div>
