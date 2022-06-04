@@ -2,7 +2,9 @@ import { useAppSelector } from "../../../redux/hooks";
 import "./characters.style.scss";
 
 const CharactersList = () => {
-  const dataList = useAppSelector((state: any) => state.rootReducer.users.list);
+  const dataList = useAppSelector(
+    (state: any) => state.rootReducer.characters.list
+  );
 
   const list = dataList.slice(0, 12);
 

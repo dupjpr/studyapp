@@ -6,7 +6,7 @@ const randomPage = () => {
   return Math.floor(Math.random() * 20) + 1;
 };
 
-export const fetchPosts = createAsyncThunk("get/usersData", async () => {
+export const fetchCharacters = createAsyncThunk("get/characters", async () => {
   const response = await fetch(
     `https://rickandmortyapi.com/api/character/?page=${randomPage()}`
   );
@@ -14,20 +14,20 @@ export const fetchPosts = createAsyncThunk("get/usersData", async () => {
   return data.results;
 });
 
-export const usersList = createSlice({
-  name: "users",
+export const charactersList = createSlice({
+  name: "characters",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchPosts.pending, () => {})
-      .addCase(fetchPosts.fulfilled, (state, action) => {
+      .addCase(fetchCharacters.pending, () => {})
+      .addCase(fetchCharacters.fulfilled, (state, action) => {
         state.list = action.payload;
         state.loading = !state.loading;
       });
   },
 });
 
-// export const { addUser } = userList.actions;
+// export const { addUser } = charactersList.actions;
 
-export default usersList.reducer;
+export default charactersList.reducer;
