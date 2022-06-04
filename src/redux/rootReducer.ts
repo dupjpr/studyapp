@@ -1,10 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import formInputData from "./slices/formSlice";
-import usersList from "./slices/usersListSlice";
+import dataEpisodes from "./slices/episodesSlice";
+import charactersList from "./slices/charactersSlice";
 
 const rootReducer = combineReducers({
-  users: usersList,
-  userInput: formInputData,
+  characters: charactersList,
+  episodes: dataEpisodes,
 });
 
 export default rootReducer;

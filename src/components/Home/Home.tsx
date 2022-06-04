@@ -5,7 +5,7 @@ import CharactersList from "./Characters/Characters";
 import "./home.style.scss";
 
 const Users = () => {
-  const data = useAppSelector((state) => state.rootReducer.users);
+  const data = useAppSelector((state) => state.rootReducer.characters);
 
   const { loading } = data;
 

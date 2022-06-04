@@ -1,6 +1,6 @@
 import { render } from "../../redux/test-utils";
 import { screen } from "@testing-library/react";
-import Input from "./Input";
+import Input from "./episodes";
 
 describe("general test to the form", () => {
   test("Should has 3 inputs", () => {

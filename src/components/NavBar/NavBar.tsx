@@ -5,8 +5,8 @@ import "./navBar.style.scss";
 const NavBar: React.FC = () => {
   return (
     <nav className="navBar-container">
-      <NavLink to="/">Users</NavLink>
-      <NavLink to="/form">New User</NavLink>
+      <NavLink to="/">Characters</NavLink>
+      <NavLink to="/episodes">Episodes</NavLink>
     </nav>
   );
 };
