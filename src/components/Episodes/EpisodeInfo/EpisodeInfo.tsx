@@ -1,6 +1,8 @@
 import { useAppSelector } from "../../../redux/hooks";
 import EpisodeContent from "./EpisodeContent";
 
+import "./episodeInfo.style.scss";
+
 const EpisodeInfo = () => {
   const data: { [key: string]: any } = useAppSelector(
     (state) => state.rootReducer.episodes
@@ -11,7 +13,7 @@ const EpisodeInfo = () => {
   const infoEpisode = episodesList.filter((item: any) => item.id === idEpisode);
 
   return (
-    <div>
+    <div className="episodeInfo-container">
       {idEpisode ? (
         <EpisodeContent episodeInformation={infoEpisode} />
       ) : (

@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
 import { fetchEpisodesCharacters } from "../../../redux/slices/episodesSlice";
 
+import "./episodeContent.style.scss";
+
 type objectInformation = {
   air_date: string;
   characters: Array<string>;
@@ -29,10 +31,16 @@ const EpisodeContent: React.FC<episodeInfoProps> = ({ episodeInformation }) => {
   }, [idEpisode]);
 
   return (
-    <div>
+    <div className="content-container">
       <h2>{name}</h2>
+      <h2>Characters episode:</h2>
       {charactersEpisode.map((item: any) => (
-        <img key={item.id} src={item.image} alt="characters episode" />
+        <img
+          className="content-container-img"
+          key={item.id}
+          src={item.image}
+          alt="characters episode"
+        />
       ))}
     </div>
   );
