@@ -1,4 +1,7 @@
-.formContainer {
-  display: flex;
-  flex-direction: column;
+@use "../../style/palette.scss";
+@use "../../style//base.scss";
+
+.episode-main-container {
+  @include base.containerSize();
+  @include base.containerDisplay();
 }

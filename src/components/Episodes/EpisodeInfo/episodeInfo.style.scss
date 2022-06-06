@@ -1,0 +1,8 @@
+@use "../../../style/palette.scss";
+@use "../../../style//base.scss";
+
+.episodeInfo-container {
+  @include base.containerSize($width: 70%);
+  overflow: scroll;
+  //   @include base.containerDisplay();
+}

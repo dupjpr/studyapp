@@ -34,9 +34,27 @@
           $justify: space-around
         );
         @include base.containerSize($width: 60%, $height: 100%);
+        padding: 0 2% 1%;
         h2 {
           @include base.containerSize($height: auto);
           text-align: center;
+          font-size: 1.3rem;
+        }
+        > div {
+          @include base.containerSize($width: 100%);
+          @include base.containerDisplay(
+            $align: center,
+            $direction: row,
+            $justify: start
+          );
+        }
+        > div :nth-child(1) {
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+        > div :nth-child(2) {
+          margin-left: 7%;
+          font-size: 1.2rem;
         }
       }
     }
