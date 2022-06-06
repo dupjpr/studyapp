@@ -17,7 +17,7 @@ const EpisodeInfo = () => {
       {idEpisode ? (
         <EpisodeContent episodeInformation={infoEpisode} />
       ) : (
-        <div>pick a episode</div>
+        <div className="episodeInfo-container-msn">Pick a Episode!</div>
       )}
     </div>
   );

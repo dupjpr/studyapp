@@ -4,5 +4,10 @@
 .episodeInfo-container {
   @include base.containerSize($width: 70%);
   overflow: scroll;
-  //   @include base.containerDisplay();
+  .episodeInfo-container-msn {
+    @include base.containerDisplay();
+    @include base.containerSize();
+    color: whitesmoke;
+    font-size: 2rem;
+  }
 }
