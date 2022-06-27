@@ -11,7 +11,7 @@ const Episodes: React.FC = () => {
   const { loading } = data;
 
   return (
-    <div className="episode-main-container">
+    <div className="episode-main-container" data-testid="testEpisodes">
       {loading ? <Loading /> : <EpisodesList />}
       <EpisodeInfo />
     </div>

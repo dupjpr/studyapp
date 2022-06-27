@@ -22,7 +22,7 @@ const View: React.FC = () => {
   console.log(data);
 
   return (
-    <section className="viewSectionContainer">
+    <section className="viewSectionContainer" data-testid="testView">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/episodes" element={<Episodes />} />

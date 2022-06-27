@@ -6,12 +6,12 @@ const CharactersList = () => {
     (state: any) => state.rootReducer.characters.list
   );
 
-  const list = dataList.slice(0, 12);
+  const list = dataList?.slice(0, 12);
 
   return (
-    <div className="characters-container">
-      {list.map((item: { [key: string]: string }) => (
-        <div key={item.id} className="grid-item">
+    <div className="characters-container" data-testid="testCharacters">
+      {list?.map((item: { [key: string]: string }) => (
+        <div key={item.id} className="grid-item" data-testid="testCard">
           <div className="character-card">
             <div className="character-card-img">
               <img src={item.image} alt={item.name} />

@@ -10,7 +10,7 @@ const Users = () => {
   const { loading } = data;
 
   return (
-    <div className="home-container">
+    <div className="home-container" data-testid="testHome">
       {loading ? <Loading /> : <CharactersList />}
     </div>
   );

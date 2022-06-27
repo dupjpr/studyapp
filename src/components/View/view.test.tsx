@@ -1,15 +1,14 @@
 import { render } from "../../redux/test-utils";
 import { screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Episodes from "./episodes";
+import View from "./View";
 
-test("has a class home-container", () => {
+test("has a class viewSectionContainer", () => {
   render(
     <BrowserRouter>
-      <Episodes />
+      <View />
     </BrowserRouter>
   );
-
-  const element = screen.getByTestId("testEpisodes");
-  expect(element).toHaveClass("episode-main-container");
+  const element = screen.getByTestId("testView");
+  expect(element).toHaveClass("viewSectionContainer");
 });
