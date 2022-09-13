@@ -1,17 +1,14 @@
-import { useAppSelector } from "../../redux/hooks";
+import { useAtom } from "jotai";
 import Loading from "../uiLibrary/Loading/Loading";
 import CharactersList from "./Characters/Characters";
+import { DataAtom } from "../../state/Atoms";
 
 import "./home.style.scss";
 
 const Users = () => {
-  const data = useAppSelector((state) => state.rootReducer.characters);
-
-  const { loading } = data;
-
   return (
     <div className="home-container" data-testid="testHome">
-      {loading ? <Loading /> : <CharactersList />}
+      <CharactersList />
     </div>
   );
 };

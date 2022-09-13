@@ -6,14 +6,9 @@ import EpisodeInfo from "./EpisodeInfo/EpisodeInfo";
 import "./episodes.style.scss";
 
 const Episodes: React.FC = () => {
-  const data = useAppSelector((state) => state.rootReducer.episodes);
-
-  const { loading } = data;
-
   return (
     <div className="episode-main-container" data-testid="testEpisodes">
-      {loading ? <Loading /> : <EpisodesList />}
-      <EpisodeInfo />
+      episodes
     </div>
   );
 };
