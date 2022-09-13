@@ -8,7 +8,8 @@ import "./episodes.style.scss";
 const Episodes: React.FC = () => {
   return (
     <div className="episode-main-container" data-testid="testEpisodes">
-      episodes
+      <EpisodesList />
+      <EpisodeInfo />
     </div>
   );
 };

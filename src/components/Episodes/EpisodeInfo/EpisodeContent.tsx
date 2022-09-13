@@ -1,25 +1,26 @@
-import { useEffect } from "react";
-import { useAppSelector, useAppDispatch } from "../../../redux/hooks";
-import { fetchEpisodesCharacters } from "../../../redux/slices/episodesSlice";
-
+import { useAtom } from "jotai";
+import { EpisodeInfoAtom } from "../../../state/Atoms";
 import "./episodeContent.style.scss";
 
-type objectInformation = {
-  air_date: string;
-  characters: Array<string>;
-  created: string;
-  episode: string;
-  id: number;
-  name: string;
-  url: string;
-};
+const EpisodeContent: React.FC = () => {
+  const [episode] = useAtom(EpisodeInfoAtom);
 
-interface episodeInfoProps {
-  episodeInformation: Array<objectInformation>;
-}
+  const { name, images } = episode;
 
-const EpisodeContent: React.FC<episodeInfoProps> = ({ episodeInformation }) => {
-  return <div className="content-container">this is the each info</div>;
+  return (
+    <div className="content-container">
+      <h2>{name}</h2>
+      <h2>Characters episode:</h2>
+      {images.map((item: any) => (
+        <img
+          className="content-container-img"
+          key={item.id}
+          src={item.image}
+          alt="characters episode"
+        />
+      ))}
+    </div>
+  );
 };
 
 export default EpisodeContent;
