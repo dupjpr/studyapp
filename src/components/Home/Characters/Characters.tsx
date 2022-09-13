@@ -1,16 +1,14 @@
-import { useAppSelector } from "../../../redux/hooks";
+import { useAtom } from "jotai";
+import { HomeDataAtom } from "../../../state/Atoms";
+
 import "./characters.style.scss";
 
 const CharactersList = () => {
-  const dataList = useAppSelector(
-    (state: any) => state.rootReducer.characters.list
-  );
-
-  const list = dataList?.slice(0, 12);
+  const [data] = useAtom(HomeDataAtom);
 
   return (
     <div className="characters-container" data-testid="testCharacters">
-      {list?.map((item: { [key: string]: string }) => (
+      {data?.map((item: { [key: string]: string }) => (
         <div key={item.id} className="grid-item" data-testid="testCard">
           <div className="character-card">
             <div className="character-card-img">
