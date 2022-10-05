@@ -1,17 +1,20 @@
 import { useAtom } from "jotai";
 import { EpisodeIdAtom } from "../../../state/Atoms";
 import EpisodeContent from "./EpisodeContent";
+import { Suspense } from "react";
+import Loading from "../../uiLibrary/Loading/Loading";
 
 import "./episodeInfo.style.scss";
 
 const EpisodeInfo = () => {
   const [idEpisode] = useAtom(EpisodeIdAtom);
-  console.log({ idEpisode });
 
   return (
     <div className="episodeInfo-container" data-testid="testEpisodesInfo">
       {idEpisode ? (
-        <EpisodeContent />
+        <Suspense fallback={<Loading />}>
+          <EpisodeContent />
+        </Suspense>
       ) : (
         <div
           className="episodeInfo-container-msn"
