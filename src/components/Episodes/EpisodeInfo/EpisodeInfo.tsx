@@ -1,23 +1,20 @@
-import { useAppSelector } from "../../../redux/hooks";
+import { useAtom } from "jotai";
+import { EpisodeIdAtom } from "../../../state/Atoms";
 import EpisodeContent from "./EpisodeContent";
+import { Suspense } from "react";
+import Loading from "../../uiLibrary/Loading/Loading";
 
 import "./episodeInfo.style.scss";
 
 const EpisodeInfo = () => {
-  const data: { [key: string]: any } = useAppSelector(
-    (state) => state.rootReducer.episodes
-  );
-
-  const { episodesList, idEpisode } = data;
-
-  const infoEpisode = episodesList?.filter(
-    (item: any) => item.id === idEpisode
-  );
+  const [idEpisode] = useAtom(EpisodeIdAtom);
 
   return (
     <div className="episodeInfo-container" data-testid="testEpisodesInfo">
       {idEpisode ? (
-        <EpisodeContent episodeInformation={infoEpisode} />
+        <Suspense fallback={<Loading />}>
+          <EpisodeContent />
+        </Suspense>
       ) : (
         <div
           className="episodeInfo-container-msn"

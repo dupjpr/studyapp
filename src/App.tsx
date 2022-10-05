@@ -10,13 +10,13 @@ import "./app.style.scss";
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<Loading />}>
-        <BrowserRouter>
-          <Header />
+      <BrowserRouter>
+        <Header />
+        <Suspense fallback={<Loading />}>
           <View />
-          <Footer />
-        </BrowserRouter>
-      </Suspense>
+        </Suspense>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
