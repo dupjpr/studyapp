@@ -8,7 +8,7 @@ const CharactersList = () => {
 
   return (
     <div className="characters-container" data-testid="testCharacters">
-      {data?.map((item: { [key: string]: string }) => (
+      {data.map((item: { [key: string]: string }) => (
         <div key={item.id} className="grid-item" data-testid="testCard">
           <div className="character-card">
             <div className="character-card-img">

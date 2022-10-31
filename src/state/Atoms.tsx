@@ -1,12 +1,6 @@
 import { atom } from "jotai";
 
-export const DataAtom = atom(async () => {
-  const page = Math.floor(Math.random() * 20) + 1;
-  const URL: string = `https://rickandmortyapi.com/api/character/?page=${page}`;
-  const res = await fetch(URL);
-  const resJson = await res.json();
-  return resJson.results;
-});
+export const DataAtom = atom([]);
 
 export const HomeDataAtom = atom((get) => {
   const dataHome = get(DataAtom).slice(0, 12);

@@ -2,7 +2,7 @@
 @use "../../../style/palette.scss";
 
 .loading-container {
-  @include base.containerSize();
+  @include base.containerSize($height: 85vh);
   @include base.containerDisplay();
   .loader {
     width: 82px;
