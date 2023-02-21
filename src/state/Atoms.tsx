@@ -2,9 +2,24 @@ import { atom } from "jotai";
 
 export const DataAtom = atom([]);
 
+export const filterAtom = atom("All species");
+
 export const HomeDataAtom = atom((get) => {
   const dataHome = get(DataAtom).slice(0, 12);
-  return dataHome;
+
+  if (get(filterAtom) === "All species") {
+    return dataHome;
+  } else {
+    const dataFilter = dataHome.filter(
+      (item: { [key: string]: string }) => item.species === get(filterAtom)
+    );
+    return dataFilter;
+  }
+});
+
+export const FilterDataAtom = atom((get) => {
+  const dataFilter = get(DataAtom).slice(0, 12);
+  return dataFilter;
 });
 
 export const DataEpisodesAtom = atom(async () => {

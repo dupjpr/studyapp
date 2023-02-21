@@ -1,0 +1,38 @@
+@use "../../style/base.scss";
+@use "../../style/palette.scss";
+
+.filter-container {
+  padding: 0 3.8%;
+  @include base.containerSize($height: 5vh);
+  @include base.containerDisplay($justify: start);
+}
+
+.filter-container-label {
+  font-size: 1.1rem;
+}
+
+.filter-container-select {
+  @include base.containerSize($height: 2.5vh, $width: 200px);
+  margin-left: 1%;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: none;
+  padding-left: 0.5%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  color: antiquewhite;
+}
+
+.filter-container-select option {
+  color: black;
+}
+select option:first-child {
+  color: green;
+}
