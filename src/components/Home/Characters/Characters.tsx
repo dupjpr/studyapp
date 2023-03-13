@@ -12,7 +12,7 @@ const CharactersList = () => {
       <Filter />
       <div className="characters-container" data-testid="testCharacters">
         {data?.map((item: { [key: string]: string }) => (
-          <div key={item.id} className="grid-item" data-testid="testCard">
+          <div key={item.id} className="grid-item" data-testid={`testCard`}>
             <div className="character-card">
               <div className="character-card-img">
                 <img src={item.image} alt={item.name} />
