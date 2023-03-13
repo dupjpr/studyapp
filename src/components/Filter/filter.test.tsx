@@ -1,13 +1,14 @@
 import { render, screen } from "@testing-library/react";
-import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 
-test("has text in the footer", () => {
+import Filter from "./Filter";
+
+test("should contain the text Choose a species:", () => {
   render(
     <BrowserRouter>
-      <Footer />
+      <Filter />
     </BrowserRouter>
   );
-  const linkElement = screen.getByText(/Code by Dup-K/i);
+  const linkElement = screen.getByText(/Choose a species:/i);
   expect(linkElement).toBeInTheDocument();
 });
