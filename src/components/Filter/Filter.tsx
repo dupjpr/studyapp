@@ -1,28 +1,38 @@
+import { useEffect } from "react";
 import { useAtom } from "jotai";
-import { FilterDataAtom, filterAtom } from "../../state/Atoms";
-
+import {
+  FilterSpeciesValueAtom,
+  FilterGenderValueAtom,
+  ChunkDataAtom,
+  HomeDataAtom,
+  LabelsGenderAtom,
+} from "../../state/Atoms";
+import optionsCreator from "./optionsCreator";
 import "./filter.style.scss";
 
 const Filter = () => {
-  const [data] = useAtom(FilterDataAtom);
-  const [dataFilter, setDataFilter] = useAtom(filterAtom);
+  const [specie, setSpecie] = useAtom(FilterSpeciesValueAtom);
+  const [gender, setGender] = useAtom(FilterGenderValueAtom);
+  const [dataSetFull] = useAtom(HomeDataAtom);
+  const [dataSet] = useAtom(ChunkDataAtom);
+  const [labelsGender, setLabelsGender] = useAtom(LabelsGenderAtom);
 
-  const arrayLabels = data?.map(
-    (item: { [key: string]: string }) => item.species
-  );
+  const speciesFilterName = "speciesFilter";
+  const genderFilterName = "gendersFilter";
+  const optionsFilterSpecies = optionsCreator(dataSet, speciesFilterName);
+  const optionsFilterGender = optionsCreator(labelsGender, genderFilterName);
 
-  const options: Array<string> = [];
+  useEffect(() => {
+    setLabelsGender(dataSetFull);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [specie]);
 
-  arrayLabels?.forEach((item) => {
-    const check = options.some((arrVal: string) => item === arrVal);
-    if (!check) {
-      options.push(item);
-    }
-  });
-
-  const handleChange = (e: React.SyntheticEvent) => {
-    const target = e.target as HTMLInputElement;
-    setDataFilter(target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const target = e.target;
+    const name = e.target.name;
+    name === speciesFilterName
+      ? setSpecie(target.value)
+      : setGender(target.value);
   };
 
   return (
@@ -30,13 +40,27 @@ const Filter = () => {
       <label className="filter-container-label">Choose a species:</label>
       <select
         className="filter-container-select"
-        value={dataFilter}
-        name="speciesFilter"
+        value={specie}
+        name={speciesFilterName}
         onChange={(e) => handleChange(e)}
       >
-        <option className="pakman">All species</option>
-        {options.map((item) => (
-          <option className="pakman" value={item} key={item}>
+        <option>All species</option>
+        {optionsFilterSpecies.map((item) => (
+          <option value={item} key={item}>
+            {item}
+          </option>
+        ))}
+      </select>
+      <label className="filter-container-label">Choose a species:</label>
+      <select
+        className="filter-container-select"
+        value={gender}
+        name={genderFilterName}
+        onChange={(e) => handleChange(e)}
+      >
+        <option>All genders</option>
+        {optionsFilterGender.map((item) => (
+          <option value={item} key={item}>
             {item}
           </option>
         ))}
