@@ -1,26 +1,57 @@
 import { atom } from "jotai";
 
+// infromacion completa que viene del api
+
 export const DataAtom = atom([]);
 
-export const filterAtom = atom("All species");
+// información procesada que solo 12 elementos
+
+export const ChunkDataAtom = atom((get) => {
+  const speciesFilter = get(DataAtom).slice(0, 12);
+  return speciesFilter;
+});
+
+export const FilterSpeciesValueAtom = atom("All species");
+export const FilterGenderValueAtom = atom("All genders");
+
+// este atom renderiza los elementos en el home
 
 export const HomeDataAtom = atom((get) => {
-  const dataHome = get(DataAtom).slice(0, 12);
-
-  if (get(filterAtom) === "All species") {
-    return dataHome;
-  } else {
-    const dataFilter = dataHome.filter(
-      (item: { [key: string]: string }) => item.species === get(filterAtom)
+  if (
+    get(FilterGenderValueAtom) !== "All genders" &&
+    get(FilterSpeciesValueAtom) !== "All species"
+  ) {
+    const dataFilter = get(ChunkDataAtom)
+      .filter(
+        (item: { [key: string]: string }) =>
+          item.species === get(FilterSpeciesValueAtom)
+      )
+      .filter(
+        (item: { [key: string]: string }) =>
+          item.gender === get(FilterGenderValueAtom)
+      );
+    return dataFilter;
+  } else if (get(FilterSpeciesValueAtom) !== "All species") {
+    const dataFilter = get(ChunkDataAtom).filter(
+      (item: { [key: string]: string }) =>
+        item.species === get(FilterSpeciesValueAtom)
     );
     return dataFilter;
+  } else if (
+    get(FilterGenderValueAtom) !== "All genders" &&
+    get(FilterSpeciesValueAtom) === "All species"
+  ) {
+    const dataFilter = get(ChunkDataAtom).filter(
+      (item: { [key: string]: string }) =>
+        item.gender === get(FilterGenderValueAtom)
+    );
+    return dataFilter;
+  } else {
+    return get(ChunkDataAtom);
   }
 });
 
-export const FilterDataAtom = atom((get) => {
-  const dataFilter = get(DataAtom).slice(0, 12);
-  return dataFilter;
-});
+export const LabelsGenderAtom = atom([]);
 
 export const DataEpisodesAtom = atom(async () => {
   const URL: string = "https://rickandmortyapi.com/api/episode";
